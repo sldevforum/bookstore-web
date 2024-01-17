@@ -1,0 +1,87 @@
+<div class="p-8 mt-4">
+  <div class="shadow p-6">
+    @if(isEdit){
+    <h4>Edit Book Detail</h4>
+    }@else {
+    <h4>Create Book</h4>
+    }
+    <form [formGroup]="bookForm" (ngSubmit)="save()">
+      <div class="w-full flex flex-wrap">
+        <mat-form-field class="w-full">
+          <mat-label>ID</mat-label>
+          <input
+            type="number"
+            matInput
+            placeholder="Enter ID"
+            formControlName="id"
+          />
+        </mat-form-field>
+      </div>
+      <div class="w-full flex flex-wrap">
+        <mat-form-field class="w-full">
+          <mat-label>Title</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter Title"
+            formControlName="title"
+          />
+        </mat-form-field>
+      </div>
+      <div class="w-full flex flex-wrap">
+        <mat-form-field class="w-full">
+          <mat-label>Author</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter Author"
+            formControlName="author"
+          />
+        </mat-form-field>
+      </div>
+      <div class="w-full flex flex-wrap">
+        <mat-form-field class="w-full">
+          <mat-label>Description</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter Description"
+            formControlName="description"
+          />
+        </mat-form-field>
+      </div>
+      <div class="w-full flex flex-wrap">
+        <mat-form-field class="w-full">
+          <mat-label>Price</mat-label>
+          <input
+            type="number"
+            matInput
+            placeholder="Enter Price"
+            formControlName="price"
+          />
+        </mat-form-field>
+      </div>
+      <div class="flex justify-center">
+        @if(isEdit){
+        <button
+          mat-raised-button
+          color="primary"
+          class="w-full"
+          [disabled]="!bookForm.valid"
+        >
+          Update
+        </button>
+        }@else {
+        <button
+          mat-raised-button
+          color="primary"
+          class="w-full"
+          [disabled]="!bookForm.valid"
+        >
+          Add
+        </button>
+        }
+      </div>
+    </form>
+  </div>
+</div>
