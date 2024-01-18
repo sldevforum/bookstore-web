@@ -44,6 +44,7 @@ export class BookformComponent {
       this.httpService.getBook(this.bookID).subscribe((data) => {
         console.log(data);
         this.bookForm.patchValue(data);
+        this.bookForm.controls['id'].disable();
       });
     }
   }

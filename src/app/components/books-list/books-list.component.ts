@@ -50,7 +50,6 @@ export class BooksListComponent {
     this.httpService.deleteBook(id).subscribe(() => {
       this.openSnackBar('Book Deleted Successfully', 'Close');
       console.log('deleted');
-      // this.bookList=this.bookList.filter(x=>x.id!=id);
       this.getBookFromServer();
     });
   }
