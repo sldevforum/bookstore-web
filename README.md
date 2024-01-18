@@ -1,27 +1,101 @@
-# BookstoreWeb
+# BookStore Web Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+## Setup Guideline
 
-## Development server
+Check Node.js version
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```shell
+node --version
+```
 
-## Code scaffolding
+Check npm version
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```Shell
+npm --version
+```
 
-## Build
+Check Angular version
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```Shell
+ng version
+```
 
-## Running unit tests
+Fix Windows Powershell Policy Issue
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```Shell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
-## Running end-to-end tests
+Install latest Angular version
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```Shell
+npm install --global @angular/cli@next
+```
 
-## Further help
+## Commands used to create the web app
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Create new Angular project
+
+```Shell
+ng new bookstore-web
+```
+
+Install Angular Material package
+
+```Shell
+ng add @angular/material
+```
+
+Install Tailwind CSS package
+
+```Shell
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+```
+
+Config Tailwind CSS
+
+```TS
+  content: [
+    "./src/**/*.{html,ts}",
+  ],
+```
+
+Add Tailwind CSS to styles
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Run Angular project
+
+```Shell
+ng serve
+ng serve --open
+```
+
+Create new components
+
+```Shell
+ng generate component components/books-list
+ng generate component components/bookform
+```
+
+Create http services
+
+```Shell
+ng g s http
+```
+
+📌 **Update these files in order**
+
+🔹app.component  
+🔹app.routes  
+🔹books-list  
+🔹bookform  
+🔹interfaces/book.ts  
+🔹app.config  
+🔹books-list  
+🔹bookform
